@@ -7,10 +7,17 @@ tut_message:
 
 catrobat_tutorial_homepage:
     path:  /hello/{name}
-    defaults: { _controller: CatrobatTutorialBundle:Default:index }
+    defaults:
+        _controller: CatrobatTutorialBundle:Default:index
 
 tutorial:
     path: /tutorial
     defaults:
         _controller: FrameworkBundle:Template:template # Standard Symfony Controller
         template: 'CatrobatTutorialBundle:MyDirectory:tutorial.html.twig'
+
+add:
+    path: /add/{num1}/{num2}
+    defaults:
+        _controller: 'catrobat.web.calc.controller:add'
+       # template: 'CatrobatTutorialBundle:MyDirectory:tutorial.html.twig'

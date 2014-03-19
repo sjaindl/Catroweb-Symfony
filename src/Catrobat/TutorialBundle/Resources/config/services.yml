@@ -8,3 +8,7 @@ services:
     catrobat.web.message.controller:
         class: "Catrobat\TutorialBundle\Controller\MessageController"
         arguments: ["@templating"]
+
+    catrobat.web.calc.controller:
+        class: "Catrobat\TutorialBundle\Controller\CalcController"
+        arguments: ["@templating"]
