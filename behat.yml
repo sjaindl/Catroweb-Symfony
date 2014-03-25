@@ -25,4 +25,13 @@ api:
             autoload:    false
 #            directories: ["."]
 #            fixtures:    ~
+
+tut:
+    extensions:
+        Behat\Symfony2Extension\Extension:
+            bundle: CatrobatTutorialBundle
+            kernel:
+                env: testsqlite
+                debug: true
+
             

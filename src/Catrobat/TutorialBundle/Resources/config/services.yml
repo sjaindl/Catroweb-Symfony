@@ -1,0 +1,14 @@
+parameters:
+#    catrobat_tutorial.example.class: Catrobat\TutorialBundle\Example
+
+services:
+#    catrobat_tutorial.example:
+#        class: %catrobat_tutorial.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    catrobat.web.message.controller:
+        class: "Catrobat\TutorialBundle\Controller\MessageController"
+        arguments: ["@templating"]
+
+    catrobat.web.calc.controller:
+        class: "Catrobat\TutorialBundle\Controller\CalcController"
+        arguments: ["@templating"]
