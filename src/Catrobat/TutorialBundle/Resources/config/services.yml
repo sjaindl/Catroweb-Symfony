@@ -11,4 +11,7 @@ services:
 
     catrobat.web.calc.controller:
         class: "Catrobat\TutorialBundle\Controller\CalcController"
-        arguments: ["@templating"]
+        arguments: ["@templating", "@catrobat.calculator"]
+
+    catrobat.calculator:
+        class: "Catrobat\TutorialBundle\Services\Calculator"

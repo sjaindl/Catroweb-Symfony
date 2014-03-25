@@ -66,7 +66,7 @@ class FeatureContext extends BehatContext //MinkContext if you want to test web
         $this->client = $this->kernel->getContainer()->get('test.client');
         //$crawler = $this->client->getCrawler();
         //$crawler = $this->client->request('GET', "/add/1/1");
-        assertEquals(1, $this->crawler->filter('html:contains("Its='. $arg1 .'")')->count());
+        assertEquals(1, $this->crawler->filter('html:contains("Its='. $arg1 .'")')->count(), "Could not find the correct result!!!");
 
     }
 

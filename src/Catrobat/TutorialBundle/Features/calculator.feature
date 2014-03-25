@@ -19,3 +19,7 @@ Feature: Simple calculator!
         |0|4|4|
         |50|2|52|
         |0|1|1|
+
+  Scenario: instead of a negative result the system returns zero
+    When I visit "/add/-5/3"
+    Then I should see "0"
