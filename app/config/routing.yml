@@ -1,6 +1,6 @@
 catrobat_admin:
     resource: "@CatrobatAdminBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /superuser
 
 catrobat_api:
     resource: "@CatrobatApiBundle/Resources/config/routing.yml"
