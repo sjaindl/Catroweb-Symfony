@@ -14,7 +14,7 @@ HowTo for installing Sonata:
 	  parameters.yml.dist into parameters.yml
 	- now go to catroid.local/app_dev.php/admin and enjoy ;)
 
-HowTo for installing CasperJs and PhantomJs:\n
+HowTo for installing CasperJs and PhantomJs:
 	- $ go to vendor/ and clone following repo: git clone git://github.com/n1k0/casperjs.git
 	- $ cd casperjs
 	- $ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs
