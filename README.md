@@ -18,6 +18,7 @@ If you want to checkout Catroweb, have a look at this repository: https://github
 	* $ go to vendor/ and clone following repo: git clone git://github.com/n1k0/casperjs.git
 	* $ cd casperjs
 	* $ ln -sf `pwd`/bin/casperjs /usr/local/bin/casperjs
-	* download and extract to vendor/pantomjs: https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
+	* download and extract to vendor/pantomjs:
+	  https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
 	* $ ln -sf `pwd`/bin/phantom /usr/local/bin/phantomjs
 	* now you can start a test with following command: casperjs test path-to-testfile/testfile
