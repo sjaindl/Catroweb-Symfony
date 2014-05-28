@@ -73,4 +73,15 @@ class ProgramRepository extends EntityRepository
     $result = $q2->getSingleScalarResult();
     return $result;
   }
+
+  public function getRemixChildrenIds($programId)
+  {
+      $qb_program = $this->createQueryBuilder('e');
+      $query = $qb_program->getEntityManager()->createQuery("SELECT e.id FROM Catrobat\CoreBundle\Entity\Program e LEFT JOIN e.user f WHERE e.remix_of = ".$programId);
+      $result = $query->getResult();
+      return $result;
+  }
+
+
+
 }

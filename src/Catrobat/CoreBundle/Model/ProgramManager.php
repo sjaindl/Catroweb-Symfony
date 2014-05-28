@@ -36,7 +36,7 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
   {
     $this->pagination = $paginator;
   }
-  
+
   public function addProgram(AddProgramRequest $request)
   {
     $file = $request->getProgramfile();
@@ -54,7 +54,7 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
     {
       return null;
     }
-    
+
     $program = new Program();
     $program->setName($extracted_file->getName());
     $program->setDescription($extracted_file->getDescription());
@@ -71,15 +71,15 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
     $program->setVisible(true);
     $program->setApproved(false);
     $program->setUploadLanguage("en");
-    
+
     $this->entity_manager->persist($program);
     $this->entity_manager->flush();
-    
+
     $this->screenshot_repository->saveProgramAssets($extracted_file->getScreenshotPath(), $program->getId());
     $this->file_repository->saveProgramfile($file, $program->getId());
 
     $event = $this->event_dispatcher->dispatch("catrobat.program.successful.upload", new ProgramInsertEvent());
-    
+
     return $program;
   }
 
@@ -97,7 +97,7 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
   {
     return $this->program_repository->find($id);
   }
-  
+
   public function findByOrderedByDownloads($limit = null, $offset = null)
   {
     return $this->program_repository->findByOrderedByDownloads($limit, $offset);
@@ -107,7 +107,7 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
   {
     return $this->program_repository->findByOrderedByViews($limit, $offset);
   }
-  
+
   public function findByOrderedByDate($limit = 1, $offset = 1)
   {
     return $this->program_repository->findByOrderedByDate($limit, $offset);
@@ -125,5 +125,23 @@ class ProgramManager implements \Knp\Bundle\PaginatorBundle\Definition\Paginator
   {
     return $this->program_repository->searchCount($query);
   }
+
+
+  public function getRemixChildren($id, &$dataCollection)
+  {
+  	$children = $this->program_repository->getRemixChildrenIds($id);
+	
+  	$dataCollection[$id] = array();
+  	
+  	foreach ($children as $childArray)
+  	{
+  		$childId = $childArray["id"];
+  		$this->getRemixChildren($childId, $dataCollection[$id]);
+  	}
+  	
+    return;
+  }
+  
+
 
 }

@@ -40,7 +40,11 @@ class DefaultController extends Controller
         {
             throw $this->createNotFoundException('Unable to find Project entity.');
         }
-        return $this->templating->renderResponse('CatrobatWebBundle::detail.html.twig', array("entity" => $entity));
+		
+        $remixArray = array();
+       	$this->program_manager->getRemixChildren($id, $remixArray);
+        //var_dump($remixArray);
+        return $this->templating->renderResponse('CatrobatWebBundle::detail.html.twig', array("entity" => $entity, "remix_children" => $remixArray));
     }
 
     public function profileAction($id)
