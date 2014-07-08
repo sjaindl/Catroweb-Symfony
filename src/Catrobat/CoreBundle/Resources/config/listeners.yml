@@ -19,7 +19,11 @@ services:
             tags:
             - { name: kernel.event_listener, event: catrobat.program.before, method: onProgramBeforeInsert }
             
-            
+      catroweb.file.validator.definedimages:
+            class: Catrobat\CoreBundle\Listeners\XmlValidator
+            tags:
+            - { name: kernel.event_listener, event: catrobat.program.before, method: onProgramBeforeInsert }
+
       catrobat.core.services.invalidprogramuploadlogger:
               class:        Catrobat\CoreBundle\Listeners\InvalidProgramUploadLogger
               arguments:    ["@logger"]
