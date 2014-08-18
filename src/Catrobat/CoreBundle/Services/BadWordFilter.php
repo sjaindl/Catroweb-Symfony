@@ -13,5 +13,13 @@ class BadWordFilter {
         $repository = $this->getDoctrine()
             ->getRepository('src\Catrobat\CoreBundle\Entity\InsultingWords');
         $insultingWord = $repository->findOneByName($word);
+        if(!$insultingWord)
+        {
+            throw $this->createNotFoundException('No product found for id '.$word);
+        }
+        else
+        {
+            return true;
+        }
     }
 } 
