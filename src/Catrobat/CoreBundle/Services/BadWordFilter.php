@@ -15,7 +15,7 @@ class BadWordFilter {
         $insultingWord = $repository->findOneByName($word);
         if(!$insultingWord)
         {
-            throw $this->createNotFoundException('No product found for id '.$word);
+            throw $this->createNotFoundException('No word found '.$word);
         }
         else
         {
