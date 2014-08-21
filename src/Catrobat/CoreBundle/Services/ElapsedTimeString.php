@@ -14,26 +14,30 @@ class ElapsedTimeString
   public function getElapsedTime($timestamp)
   {
     $elapsed = time() - $timestamp;
-//     if ($elapsed < 45)
-//     {
-//       return "< 1 minute ago";
-//       // $trans("time.lessthenaminute.ago",{}, "catroweb_core");
-//     }
-//     else if ($elapsed < 90)
-//     {
-//       return "1 minute ago";
-//     }
-//     else if ($elapsed < 360)
-//     {
-//       return floor($elapsed / 60) . " minutes ago";
-//       // $trans("time.lessthenaminute.ago",{"count": }, "catroweb_core");
-//     }
-    if ($elapsed < 360)
+
+    if ($elapsed <= 3540)
     {
       $minutes = floor($elapsed / 60);
       return $this->translator->transChoice("time.minutes.ago", $minutes, array("count" => $minutes), "catroweb_core");
     }
-    return $elapsed;
+    else if ($elapsed <= 82800)
+    {
+      $hours = floor($elapsed / 3600);
+      return $this->translator->transChoice("time.hours.ago", $hours, array("count" => $hours), "catroweb_core");
+    }
+    else if ($elapsed <= 2505600)
+    {
+      $days = floor($elapsed / 86400);
+      return $this->translator->transChoice("time.days.ago", $days, array("count" => $days), "catroweb_core");
+    }
+    else if ($elapsed <= 28927800)
+    {
+      $months = floor($elapsed / 2629800);
+      return $this->translator->transChoice("time.months.ago", $months, array("count" => $months), "catroweb_core");
+    }
+
+    $years = floor($elapsed / 31557600);
+    return $this->translator->transChoice("time.years.ago", $years, array("count" => $years), "catroweb_core");
   }
 
 }
