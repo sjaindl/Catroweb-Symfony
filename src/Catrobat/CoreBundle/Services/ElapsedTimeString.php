@@ -2,18 +2,23 @@
 
 namespace Catrobat\CoreBundle\Services;
 
+use Catrobat\CoreBundle\Services\Time;
+use Symfony\Component\Translation\Translator;
+
 class ElapsedTimeString
 {
   private $translator;
+  private $time;
   
-  public function __construct(\Symfony\Component\Translation\Translator $translator)
+  public function __construct(Translator $translator, Time $time)
   {
     $this->translator = $translator;
+    $this->time = $time;
   }
   
   public function getElapsedTime($timestamp)
   {
-    $elapsed = time() - $timestamp;
+    $elapsed = $this->time->getTime() - $timestamp;
 
     if ($elapsed <= 3540)
     {
