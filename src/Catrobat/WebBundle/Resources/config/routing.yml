@@ -59,3 +59,8 @@ catrobat_web_detail:
     defaults:  { _controller: "catrobat.web.default.controller:programAction" }
     requirements:
       id:  \d+
+
+catrobat_web_test:
+    path:      /badWord
+    methods:  [GET]
+    defaults:  { _controller: "catrobat.web.test.controller:badWordAction" }
