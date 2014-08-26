@@ -63,4 +63,9 @@ class DefaultController extends Controller
   {
     return $this->templating->renderResponse('CatrobatWebBundle::licenseToPlay.html.twig');
   }
+
+  public function badWordAction()
+  {
+    return $this->templating->renderResponse('CatrobatWebBundle::test.html.twig');
+  }
 }

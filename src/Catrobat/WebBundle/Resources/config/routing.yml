@@ -63,4 +63,4 @@ catrobat_web_detail:
 catrobat_web_test:
     path:      /badWord
     methods:  [GET]
-    defaults:  { _controller: "catrobat.web.test.controller:badWordAction" }
+    defaults:  { _controller: "catrobat.web.default.controller:badWordAction" }

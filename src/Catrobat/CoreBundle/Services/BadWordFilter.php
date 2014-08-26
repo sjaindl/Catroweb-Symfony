@@ -10,6 +10,7 @@ class BadWordFilter {
 
     public function validate($word)
     {
+        // funktioniert nicht, ausbessern
         $repository = $this->getDoctrine()
             ->getRepository('src\Catrobat\CoreBundle\Entity\InsultingWords');
         $insultingWord = $repository->findOneByName($word);
