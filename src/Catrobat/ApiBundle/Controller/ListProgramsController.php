@@ -3,7 +3,6 @@
 namespace Catrobat\ApiBundle\Controller;
 
 use Catrobat\CoreBundle\Services\ElapsedTimeString;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Catrobat\CoreBundle\Model\ProgramManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
