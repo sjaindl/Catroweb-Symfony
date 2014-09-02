@@ -8,6 +8,10 @@ use Symfony\Component\Security\Core\Util\StringUtils;
 
 class BadWordFilter {
 
+    public function __construct()
+    {
+
+    }
     public function validate($word)
     {
         // funktioniert nicht, ausbessern
