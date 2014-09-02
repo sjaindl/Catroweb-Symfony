@@ -8,7 +8,7 @@ parameters:
 services:
     catrobat.api.controller.search:
         class: "%catrobat.api.controller.search.class%"
-        arguments: ["@catrobat.core.model.programmanager"]
+        arguments: ["@catrobat.core.model.programmanager", "@catrobat.core.services.elapsed.time"]
 
     catrobat.api.controller.listprograms:
         class: "%catrobat.api.controller.listprograms.class%"

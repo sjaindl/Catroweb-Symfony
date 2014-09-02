@@ -6,14 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Catrobat\CoreBundle\Model\ProgramManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Catrobat\CoreBundle\Services\ElapsedTimeString;
 
 class SearchController
 {
     protected $program_manager;
     
-    public function __construct(ProgramManager $program_manager)
+    public function __construct(ProgramManager $program_manager, ElapsedTimeString $elapsed_time)
     {
       $this->program_manager = $program_manager;
+      $this->elapsed_time = $elapsed_time;
     }
      
     public function searchProgramsAction(Request $request) 
@@ -37,7 +39,7 @@ class SearchController
         $new_program['Views'] = $program->getViews();
         $new_program['Downloads'] = $program->getDownloads();
         $new_program['Uploaded'] = $program->getUploadedAt()->getTimestamp();
-        $new_program['UploadedString'] = '0';
+        $new_program['UploadedString'] = $this->elapsed_time->getElapsedTime($program->getUploadedAt()->getTimestamp());
         $new_program['ScreenshotBig'] = "resources/thumbnails/" . $program->getId() . "_large.png";
         $new_program['ScreenshotSmall'] = "resources/thumbnails/"  . $program->getId() . "_small.png";
         $new_program['ProjectUrl'] = "details/" . $program->getId();
