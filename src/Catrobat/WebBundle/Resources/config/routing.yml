@@ -60,7 +60,7 @@ catrobat_web_detail:
     requirements:
       id:  \d+
 
-catrobat_web_prog:
-    path:     /details
+catrobat_web_details:
+    path:      /details
     methods:  [GET]
-    defaults: { _controller: "catrobat.web.default.controller:details"}
+    defaults:  { _controller: "catrobat.web.default.controller:details" }
