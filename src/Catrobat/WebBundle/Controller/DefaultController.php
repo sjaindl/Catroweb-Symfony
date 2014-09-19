@@ -63,4 +63,10 @@ class DefaultController extends Controller
   {
     return $this->templating->renderResponse('CatrobatWebBundle::licenseToPlay.html.twig');
   }
+
+  // probe
+  public function details()
+  {
+    return $this->templating->renderResponse('CatrobatWebBundle::program.html.twig');
+  }
 }
