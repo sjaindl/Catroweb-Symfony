@@ -1,21 +1,37 @@
 {% extends 'CatrobatWebBundle:Default:base.html.twig' %}
 
 {% block head %}
-    {% stylesheets '@CatrobatWebBundle/Resources/public/css/custom/detail.css' filter='cssrewrite,lessphp' %}
+    {% stylesheets '@CatrobatWebBundle/Resources/public/css/custom/program.less' filter='cssrewrite,lessphp' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock %}
 
 {% block body %}
-    <div id="program-container">
-      <div id="program-description">
-        Detailpage for program with id:
-      </div>
-      <div id="program-img">
 
+      <h1>program.name</h1>
+      <div id="program-container">
+        <div id="program-img">
+            <img src="{{ asset('bundles/catrobatweb/images/logo/favicon.png') }}"/>
+        </div>
+        <div class="program-desc">
+            <h2>Beschreibung</h2>
+            <div id="desc">
+                <p>
+                    sdasdasdsadasdasdasddasdassdasdadasdasda
+                    dasdadasdadsad
+                    adasdadasdasd
+                    adsadadasda
+                </p>
+            </div>
+            <div id="download-button">
+                <button onclick="myFunction()">Herunterladen</button>
+            </div>
+            <div id="reportAsInappropriate">
+                <a href="/">Als unpassend melden</a>
+            </div>
+        </div>
       </div>
 
-    </div>
 
 {% endblock %}
 
