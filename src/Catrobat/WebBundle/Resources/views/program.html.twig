@@ -10,28 +10,56 @@
 
       <h1>program.name</h1>
       <div id="program-container">
-        <div id="program-img">
-            <img src="{{ asset('bundles/catrobatweb/images/logo/favicon.png') }}"/>
+        <div class="program-img">
+            <img src="{{ asset('bundles/catrobatweb/images/tutorial/2_discuss.png') }}"/>
         </div>
         <div class="program-desc">
-            <h2>Beschreibung</h2>
-            <div id="desc">
-                <p>
-                    sdasdasdsadasdasdasddasdassdasdadasdasda
-                    dasdadasdadsad
-                    adasdadasdasd
-                    adsadadasda
-                </p>
+          <div class="program-desc-head">
+                Beschreibung
+          </div>
+          <div class="desc">
+            sdasdasdsadasdasdasddasdassdasdadasdasda dasdadasdadsad
+            adasdadasdasdadsadadasda
+            <div class="download-button">
+              <button class="button">Herunterladen</button>
             </div>
-            <div id="download-button">
-                <button onclick="myFunction()">Herunterladen</button>
+            <div id="report-as-inappropriate">
+              <a href="/">Als unpassend melden</a>
             </div>
-            <div id="reportAsInappropriate">
-                <a href="/">Als unpassend melden</a>
+            <div id="catrobat-lang-version">
+              program.language
             </div>
+          </div>
+        </div>
+        <div class="program-details-inf">
+          <ul>
+            <li>
+              <div class="img-time-small"></div>
+              <div class="program-inf-text">
+                program.upload
+              </div>
+            </li>
+            <li>
+              <div class="img-download-small"></div>
+              <div class="program-inf-text">
+                program.size
+              </div>
+            </li>
+            <li>
+              <div class="img-download-small"></div>
+              <div class="program-inf-text">
+                program.downloads
+              </div>
+            </li>
+            <li>
+              <div class="img-view-small"></div>
+              <div class="program-inf-text">
+                program-views
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
-
 
 {% endblock %}
 
