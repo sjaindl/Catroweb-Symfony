@@ -2,6 +2,7 @@
 
 @nav-font-size: @default-font-size + 4;
 @searchbar-font-size: @default-font-size + 2;
+@logo-width: 300px;
 
 #header-logo {
   padding-top: 40px;
@@ -22,7 +23,7 @@ header {
     }
 
     #logo img {
-      width: 300px;
+      width: @logo-width;
       min-width: 150px;
     }
 
@@ -89,7 +90,7 @@ header {
       color: #fff;
       padding: 0 !important;
       white-space: nowrap;
-      max-width: 100px;
+      max-width: 85px;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -170,5 +171,61 @@ header {
         .border-radius(2px, 2px, 0, 0);
       }
     }
+  }
+}
+
+
+//todo: make loop for following code...
+@media (max-width: @responsive-width-tablet - 320) {
+  #logo img {
+    width: @logo-width - 20 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 1;
+  }
+}
+
+@media (max-width: @responsive-width-tablet - 340) {
+  #logo img {
+    width: @logo-width - 40 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 2;
+  }
+}
+
+@media (max-width: @responsive-width-tablet - 360) {
+  #logo img {
+    width: @logo-width - 60 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 4;
+  }
+}
+
+@media (max-width: @responsive-width-tablet - 380) {
+  #logo img {
+    width: @logo-width - 80 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 6;
+  }
+}
+
+@media (max-width: @responsive-width-tablet - 400) {
+  #logo img {
+    width: @logo-width - 100 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 8;
+  }
+}
+
+@media (max-width: @responsive-width-tablet - 420) {
+  #logo img {
+    width: @logo-width - 120 !important;
+  }
+  h1 {
+    font-size: @font-size-h1 - 10;
   }
 }
