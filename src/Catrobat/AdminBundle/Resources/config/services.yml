@@ -46,3 +46,16 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, group: Tools, label: Upload Notify }
         arguments: [null, Catrobat\CoreBundle\Entity\User, null]
+
+      catrowebadmin.block.rudewords:
+        class: Catrobat\AdminBundle\Admin\RudewordAdmin
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: Tools, label: Manage Rudewords }
+        arguments: [null, Catrobat\CoreBundle\Entity\RudeWord, null]
+
+      catrowebadmin.block.featured_programs:
+        class: Catrobat\AdminBundle\Admin\FeaturedProgramsAdmin
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: Tools, label: Manage Featured }
+        arguments: [null, Catrobat\CoreBundle\Entity\FeaturedProgram, null]
+        

@@ -11,7 +11,9 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class ApproveProgramsAdmin extends Admin
 {
-
+  protected $baseRouteName = 'admin_catrobat_adminbundle_approveprogramsadmin';
+  protected $baseRoutePattern = 'approve-programs';
+  
     public function createQuery($context = 'list')
     {
         $query = parent::createQuery($context);

@@ -1,1 +1,11 @@
-Hello {{ name }}!
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+{% block side_bar_after_nav %} 
+    <li>
+        <a href="{{ path('catrobat_admin_homepage', {'name': 'World'}) }}">
+            Hello!
+        </a>
+    </li>
+{% endblock %}
+{% block content %}
+    Hello {{ name }}!
+{% endblock %}

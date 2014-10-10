@@ -10,7 +10,7 @@ use Catrobat\CoreBundle\Entity\User;
 class AllProgramsAdmin extends Admin
 {
     protected $baseRouteName = 'admin_catrobat_adminbundle_allprogramsadmin';
-    protected $baseRoutePattern = 'all_programs';
+    protected $baseRoutePattern = 'all-programs';
 
     // Fields to be shown on create/edit forms
     protected function configureFormFields(FormMapper $formMapper)

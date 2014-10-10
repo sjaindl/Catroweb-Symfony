@@ -24,10 +24,14 @@ class FeaturedProgram
     
     /**
      * @ORM\OneToOne(targetEntity="Program",fetch="EAGER")
-     * @ORM\JoinColumn(name="program_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="program_id", referencedColumnName="id", nullable=true)
      **/
     private $program;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $url;
     /**
      * Get id
      *
@@ -82,5 +86,28 @@ class FeaturedProgram
     public function getProgram()
     {
         return $this->program;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return FeaturedProgram
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }
