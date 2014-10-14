@@ -26,20 +26,29 @@ var Main = function (search_url) {
       $('#nav-dropdown').css('left', newPosition).toggle();
     });
 
-    // search enter pressed
-    $('.input-search').keypress(function(event) {
-      if(event.which == 13) self.searchPrograms($(this).val());
-    });
-
-    // search button clicked
-    $('.img-magnifying-glass').click(function() {
-      self.searchPrograms($(this).parent().parent().find('input').val());
-    });
+    self.setSearchBtnListener();
   };
 
   self.setWindowResizeListener = function() {
     $(window).resize(function() {
       $('#nav-dropdown').hide();
+    });
+  };
+
+  self.setSearchBtnListener = function() {
+    // search enter pressed
+    $('.input-search').keypress(function(event) {
+      if(event.which == 13) self.searchPrograms($(this).val());
+    });
+
+    // search button clicked (header)
+    $('#menu').find('.img-magnifying-glass').click(function() {
+      self.searchPrograms($(this).parent().parent().find('input').val());
+    });
+
+    // search button clicked (footer)
+    $('#footer-menu-desktop').find('.img-magnifying-glass').click(function() {
+      self.searchPrograms($(this).parent().parent().find('input').val());
     });
   };
 

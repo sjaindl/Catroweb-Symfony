@@ -12,22 +12,28 @@ var ProgramLoader = function (container, url) {
 
   self.init = function() {
     $.get(self.url, { limit: self.download_limit, offset: self.loaded }, function(data) {
+      if(data.CatrobatProjects.length == 0 || data.CatrobatProjects == undefined) {
+        $(self.container).find('.programs').append('<div class="no-programs">There are currently no programs.</div>');
+        return;
+      }
       self.setup(data);
     });
   };
 
   self.initSearch = function(query) {
-    $.get(self.url, { q: query, limit: self.download_limit, offset: self.loaded }, function(data) {
+    $.get(self.url, { q: query, limit: self.download_limit*2, offset: self.loaded }, function(data) {
+      if(data.CatrobatProjects.length == 0 || data.CatrobatProjects == undefined) {
+        $('#search-results-text').addClass('no-results');
+        $('#search-results-text').find('span').text(0);
+        return;
+      }
+      $('#search-results-text').find('span').text(data.CatrobatProjects.length);
       self.setup(data);
+      self.showMorePrograms();
     });
   };
 
   self.setup = function(data) {
-    if(data.CatrobatProjects.length == 0 || data.CatrobatProjects == undefined) {
-      $(self.container).find('.programs').append('<div class="no-programs">There are currently no programs.</div>');
-      return;
-    }
-
     $(self.container).append('' +
       '<div class="button-show-placeholder">' +
       '<div class="button-show-more img-load-more"></div>' +

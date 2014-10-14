@@ -22,6 +22,11 @@ catrobat_web_search:
     requirements:
       q: .+
 
+catrobat_web_search_nothing:
+    path:     /search/
+    methods:  [GET]
+    defaults: { _controller: "catrobat.web.default.controller:searchNothingAction" }
+
 catrobat_web_profile:
     path:      /profile/{id}
     methods:  [GET]
