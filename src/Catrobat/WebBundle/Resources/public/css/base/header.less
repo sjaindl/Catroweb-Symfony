@@ -174,58 +174,16 @@ header {
   }
 }
 
-
-//todo: make loop for following code...
-@media (max-width: @responsive-width-tablet - 320) {
-  #logo img {
-    width: @logo-width - 20 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 1;
-  }
-}
-
-@media (max-width: @responsive-width-tablet - 340) {
-  #logo img {
-    width: @logo-width - 40 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 2;
+.reponsive-logo-h1 (@i) when (@i > 0) {
+  .reponsive-logo-h1(@i - 1);
+  @media (max-width: @responsive-width-tablet - 300 - @i*20) {
+    #logo img {
+      width: @logo-width - @i*20 !important;
+    }
+    h1 {
+      font-size: @font-size-h1 - @i*2 !important;
+    }
   }
 }
-
-@media (max-width: @responsive-width-tablet - 360) {
-  #logo img {
-    width: @logo-width - 60 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 4;
-  }
-}
-
-@media (max-width: @responsive-width-tablet - 380) {
-  #logo img {
-    width: @logo-width - 80 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 6;
-  }
-}
-
-@media (max-width: @responsive-width-tablet - 400) {
-  #logo img {
-    width: @logo-width - 100 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 8;
-  }
-}
-
-@media (max-width: @responsive-width-tablet - 420) {
-  #logo img {
-    width: @logo-width - 120 !important;
-  }
-  h1 {
-    font-size: @font-size-h1 - 10;
-  }
-}
+.reponsive-logo-h1(0) {};
+.reponsive-logo-h1(6);
