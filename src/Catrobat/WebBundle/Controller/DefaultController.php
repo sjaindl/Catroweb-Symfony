@@ -47,6 +47,12 @@ class DefaultController extends Controller
     return $this->templating->renderResponse('CatrobatWebBundle::program.html.twig', array("program" => $program));
   }
 
+  public function searchAction($q)
+  {
+    //todo: check q?
+    return $this->templating->renderResponse('CatrobatWebBundle::search.html.twig', array("q" => $q));
+  }
+
   public function profileAction($id)
   {
     $profile = $id;
