@@ -28,7 +28,13 @@ class User extends BaseUser
     */
     protected $upload_notification;
 
-  /**
+    /**
+     * @ORM\Column(type="boolean", nullable=true, options={"default":false})
+     */
+    protected $upload_notification_summary;
+
+
+    /**
    * @ORM\OneToMany(targetEntity="Program", mappedBy="user")
    */
   protected $programs;
@@ -105,6 +111,24 @@ class User extends BaseUser
     public function getUploadNotification()
     {
         return $this->upload_notification;
+    }
+
+
+    /**
+     * @return boolean
+     */
+    public function getUploadNotificationSummary()
+    {
+        return $this->upload_notification_summary;
+    }
+
+
+    /**
+     * @param boolean $upload_notification_summary
+     */
+    public function setUploadNotificationSummary($upload_notification_summary)
+    {
+        $this->upload_notification_summary = $upload_notification_summary;
     }
 
 }

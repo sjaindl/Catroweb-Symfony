@@ -32,3 +32,10 @@ services:
               tags:
                   - { name: monolog.logger, channel: upload }
                   - { name: kernel.event_listener, event: catrobat.program.invalid.upload, method: onInvalidProgramUploadedEvent }
+
+      catrobat.core.services.uploadnotificator:
+              class:        Catrobat\CoreBundle\Listeners\UploadNotificator
+              arguments:    ["@logger"]
+              tags:
+                  - { name: monolog.logger, channel: upload }
+                  - { name: kernel.event_listener, event: catrobat.program.insert, method: onProgramInsertEvent }
