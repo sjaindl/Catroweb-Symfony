@@ -1,0 +1,80 @@
+{% extends ':Default:base.html.twig' %}
+
+{% block head %}
+    {% stylesheets 'css/custom/program.less' filter='cssrewrite,lessphp' output='compiled/program.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+
+      <div class="author">
+        {{ program.user }}
+      </div>
+
+      <h1>{{ program.name }}  <div class="img-user"></div></h1>
+      <div id="program-container">
+        <div class="program-img">
+            <a href="{{ path('catrobat_api_download', {'id': program.id}) }}">
+            <img src="/{{ screenshot }}" >
+            </a>
+        </div>
+        <div class="program-desc">
+          <div class="program-desc-head">
+                Beschreibung
+          </div>
+          <div class="desc size-large">
+            {{ program.description }}
+            <div class="download-button">
+              <a href="{{ path('catrobat_api_download', {'id': program.id}) }}">
+                <span>Herunterladen</span>
+              </a>
+            </div>
+            <div id="report-as-inappropriate">
+              <a href="/">Als unpassend melden</a>
+            </div>
+            <div id="catrobat-lang-version">
+                Catrobat Language Version: {{ program.languageVersion }}
+            </div>
+          </div>
+        </div>
+        <div class="program-details-inf">
+          <ul>
+            <li>
+                <div class="img-author-blue"></div>
+                <div class="author-mobile size-large">
+                    <a href="/">
+                        {{ program.user }}
+                    </a>
+                </div>
+            </li>
+            <li>
+              <div class="img-time-big"></div>
+              <div class="program-inf-text size-large">
+                {{ elapsedTime }}
+              </div>
+            </li>
+            <li>
+              <div class="img-size-big"></div>
+              <div class="program-inf-text size-large">
+               {{ "program.mbsize"|trans({'%number%': program.filesize}, "catroweb") }}
+              </div>
+            </li>
+            <li>
+              <div class="img-download-big"></div>
+              <div class="program-inf-text size-large">
+                {{ "program.downloads"|trans({'%number%': program.downloads}, "catroweb") }}
+              </div>
+            </li>
+            <li>
+              <div class="img-view-big"></div>
+              <div class="program-inf-text size-large">
+                {{ "program.views"|trans({'%number%': program.views}, "catroweb") }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+{% endblock %}
+

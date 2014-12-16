@@ -1,0 +1,247 @@
+@import '../base/default';
+@import '../base/brain';
+
+
+#program-container {
+  overflow: auto;
+
+  .program-img{
+    float: left;
+    margin: 0% 1% 0% 1%;
+    padding: 0;
+    width: 30%;
+    padding: 15px 0;
+
+    img {
+      outline: 3px solid #fff;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+
+  .program-desc{
+    float: left;
+    margin: 2% 1% 0% 1%;
+    padding: 0;
+    width: 60%;
+    max-width: 60%;
+    text-align: justify;
+
+    .program-desc-head{
+      margin-left: 0.7em;
+      color: #17a5be;
+      font-size: 21px;  //todo..variable
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .desc {
+      margin-left: 1em;
+      overflow: hidden;
+      text-align: left;
+
+      .download-button {
+        margin:5% 0 5% 0;
+        padding: auto, 10px;
+        width: 200px;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+        }
+
+        span {
+          border-radius: 4px;
+          color: #fff;
+          padding: 5% 10%;
+          text-transform: uppercase;
+          text-decoration: none;
+          text-shadow: #333333 1px 1px 1px;
+          text-align: center;
+          background-color: #177f8d;
+          background-image: linear-gradient(top, #17A5B8, #177f8d);
+          background-image: -moz-linear-gradient(top, #17A5B8, #177f8d);
+          background-image: -webkit-linear-gradient(top, #17A5B8, #177f8d);
+          font-size: 24px;
+          font-weight: bold;
+        }
+      }
+
+      #report-as-inappropriate{
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      #catrobat-lang-version{
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .program-details-inf{
+    clear: both;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #17a5b8;
+    padding-right: 3%;
+    margin: 100px 0 30px 0;
+
+    ul {
+      float: left;
+      margin-left: 1%;
+      margin-right: 1%;
+      list-style: none;
+      padding: 0;
+      width: 100%;
+
+      li {
+        float: left;
+        text-align: justify;
+        width: 25%;
+
+        .img-author-blue {
+          display: none;
+          float: left;
+        }
+
+        .img-time-big{
+          float: left;
+        }
+
+        .img-download-big{
+          float: left;
+        }
+
+        .img-view-big {
+          float: left;
+        }
+
+        .img-size-big {
+          float: left;
+        }
+
+        .program-inf-text{
+          float: left;
+          margin: 5px 0;
+          padding-left: 2%;
+        }
+        .author-mobile{
+          display:none;
+          float:left;
+          margin: 5px 0;
+          padding-left: 2%;
+        }
+      }
+    }
+  }
+}
+
+.img-avatar {
+  float: right;
+}
+
+.author {
+  float: right;
+  margin-left: 10px;
+  color: #fff;
+  font-size: @default-font-size + 11;
+  font-weight: bold;
+}
+
+.img-user {
+  float:right;
+}
+
+@media (max-width: @responsive-width-tablet) {
+  #program-container {
+    margin-left: 1%;
+    margin-right: 1%;
+    max-width: 100%;
+
+    .program-img {
+      clear: left;
+      width: 97%;
+
+      img {
+        display: block;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 2%;
+        width: 50%;
+        outline: 0.3em solid #fff;
+        vertical-align: middle;
+        page-break-inside: avoid;
+      }
+    }
+    .program-desc {
+      clear: left;
+      width: 100%;
+      margin-top: 10%;
+      max-width: 97%;
+      text-align: justify;
+      padding-left: 0.5em;
+    }
+    .program-details-inf {
+      clear: both;
+      float: left;
+      padding-top: 0;
+      padding-left: 5%;
+      padding-right: 3%;
+      width: 97%;
+      border-top: 1px solid #17a5b8;
+
+      ul {
+        clear: both;
+        float: left;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-top: 3%;
+        font-size: 1.0em;
+        list-style: none;
+        padding: 0;
+        width: 97%;
+
+        li {
+          clear: both;
+          width: 97%;
+          margin-top: 0;
+          padding-top: 0;
+          margin-bottom: 30px;
+          display: inline;
+
+          .author-mobile {
+            display: block;
+          }
+
+          .img-author-blue {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .author {
+    display: none;
+  }
+
+  .img-user {
+    display:none;
+  }
+}
+
+@media (max-width: @responsive-width-mobile){
+  #program-container {
+    .program-img {
+      .img {
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+
